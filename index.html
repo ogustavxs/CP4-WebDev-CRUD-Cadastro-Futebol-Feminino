@@ -11,6 +11,98 @@
 
 </head>
 <body>
+    <header>
+        <h1>SISCAD Futebol Feminino</h1>
+        <nav>
+            <ul class="nav-list">
+                <li data-action="cadastrar">Cadastrar</li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Formulário para criar um novo player -->
+    <form id="playerForm">
+        <div class="first-row">
+            <div class="form-area">
+                <label for="playerNome"> Digite o nome:</label>
+                <input type="text" name="playerNome" id="playerNome" placeholder="Digite o nome aqui">
+            </div>
+
+            <div class="form-area">
+                <label for="playerPosicao">Posição:</label>
+                <select id="playerPosicao">
+                    <option value="Centro avante">Centroavante</option>
+                    <option value="Ponta direita">Ponta direita</option>
+                    <option value="Ponta esquerda">Ponta esquerda</option>
+                    <option value="Meio campo">Meio-campo</option>
+                    <option value="Volante">Volante</option>
+                    <option value="Zagueiro">Zagueiro</option>
+                    <option value="Lateral esquerdo">Lateral esquerdo</option>
+                    <option value="Lateral direito">Lateral direito</option>
+                    <option value="Goleiro">Goleiro</option>
+                    <option value="Outros">Outros</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="second-row">
+            <div class="form-area">
+                <label for="playerClube"> Digite o clube:</label>
+                <input type="text" name="playerClube" id="playerClube" placeholder="Digite o clube aqui">
+            </div>
+            
+            <div class="form-area">
+                <label for="playerImage">Insira uma imagem (URL):</label>
+                <input type="text" id="playerImage" placeholder="Insira a url aqui">
+            </div>
+        </div>
+
+        <div class="third-row">
+            <section class="statistics">
+                <div>
+                    <label for="playerGols"> Gols:</label>
+                    <input type="number" id="playerGols" min="0" step="1" value="0">
+                    </div>
+                    <div>
+                    <label for="playerAssistencias"> Assistências:</label>
+                    <input type="number" id="playerAssistencias" min="0" step="1" value="0">
+                    </div>
+                    <div>
+                    <label for="playerJogos"> Jogos:</label>
+                    <input type="number" id="playerJogos" min="0" step="1" value="0">
+                    </div>
+            </section>
+        </div>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <h1>Jogadoras</h1>
+    <div class="options">
+        <form id="playerFilter">
+            <div class="filter-area">
+                <select name="" id="">
+                    <option value="Todos os times">Todos os times</option>
+                </select>
+            </div>
+        </form>
+
+        <form id="playerFind">
+            <div class="search-area">
+                <input type="text" name="PlayerFindArea" id="playerFindArea" placeholder="Procure uma jogadora ou posição">
+                <button type="submit"><i class="fa-solid fa-search"></i></button>
+            </div>
+        </form>
+    </div>
+    <div class="order">
+        <button class="crescente"><i class="fa-solid fa-arrow-up-a-z"></i>Crescente</button>
+        <button class="decrescente"><i class="fa-solid fa-arrow-up-z-a"></i>Decrescente</button>
+        
+    </div>
+
+    <!-- Lista de players -->
+    <div id="playerList"></div>
+
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/129b440489.js" crossorigin="anonymous"></script>
 </body>
