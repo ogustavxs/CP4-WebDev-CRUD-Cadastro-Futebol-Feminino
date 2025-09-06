@@ -163,6 +163,42 @@ function showCadastrar() {
     }
 }
 
+function carregarOptions() {
+    let optionsFilter = []
+    const filtrosSelect = document.querySelector(".filter-area select")
+    filtrosSelect.innerHTML = '<option value="Todos os times">Todos os times</option>'
+    players.forEach((pegaPlayer) => {
+        const option = pegaPlayer.clube
+        if (optionsFilter.includes(option)) {
+            return
+        } else {
+            optionsFilter.push(option)
+        }
+    })
+    optionsFilter.forEach((clube) => {
+        const newOption = document.createElement('option')
+        newOption.value = clube
+        newOption.innerHTML = clube
+        filtrosSelect.append(newOption)
+    })
+}
+
+// FILTER
+function filterPlayers(event) {
+    const option = event.target.value
+    if (option == "Todos os times") {
+        searchedPlayers = null
+        displayPlayers()
+        return
+    }
+    searchedPlayers = players.filter((pegaPlayer) => (
+        pegaPlayer.clube.toLowerCase().startsWith(option.toLowerCase())
+    ))
+    displayPlayers()
+    console.log(searchedPlayers)
+}
+
+
 // SEARCH
 function searchPlayer(event) {
     event.preventDefault()
