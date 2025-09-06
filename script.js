@@ -340,6 +340,13 @@ function apagarPlayer(index){
     displayPlayers();
 }
 
+//FAVORITAR 
+function favoritarPlayer(index) {
+    players[index].favorita = !players[index].favorita
+    salvarPlayers()
+    displayPlayers()
+}
+
 function salvarPlayers(){
     localStorage.setItem("players", JSON.stringify(players));
 }
